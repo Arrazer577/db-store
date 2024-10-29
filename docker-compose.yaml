@@ -10,7 +10,7 @@ services:
       - ./site.yml:/ansible/site.yml
       - ./inventory.ini:/ansible/inventory.ini
       - ./web:/ansible/web
-      - ./secrets:/root/.ssh
+      - ./secrets:/ansible/secrets
     networks:
       ubuntu-nodes-net:
         ipv4_address: 192.168.1.100

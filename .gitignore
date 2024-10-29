@@ -1,1 +1,20 @@
-secrets
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+*.tfvars
+
+# SSH keys or sensitive files
+secrets/
+*.pem
+
+# Docker
+**/Dockerfile
+**/docker-compose.yml
+/tmp/
+.env
+
+# Miscellaneous
+*.log
+.DS_Store

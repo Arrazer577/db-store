@@ -1,11 +1,16 @@
 - hosts: webserver
+  become: true  
   tasks:
+    - name: Actualizar el cache de paquetes
+      apt:
+        update_cache: yes
+
     - name: Instalar Nginx
-      yum:
+      apt:
         name: nginx
         state: present
 
-    - name: Iniciar Nginx
+    - name: Iniciar y habilitar Nginx
       service:
         name: nginx
         state: started
@@ -13,5 +18,5 @@
 
     - name: Copiar el archivo HTML
       copy:
-        src: ./web/index.html
-        dest: /usr/share/nginx/html/index.html
+        src: ./web/index.html  
+        dest: /usr/share/nginx/html/index.html  
